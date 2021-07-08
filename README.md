@@ -1,11 +1,13 @@
 # WebProxy
 
 A web-proxy is a simple web-client and web-server wrapped in a single application. It receives requests from one or more clients (web-browsers) for particular content URLs, and forwards them on to the intended server, then returns the result to your web-browser - in some form. How is this useful?
+
 • It can cache content, so the second and later clients to make the same request get a more rapid response, and free up network capacity.
 • It can filter content, to ensure that content coming back is ‘safe’, e.g. for children or your home, or for staff/their computers inside an organisation.
 • It can filter requests, to ensure that people don’t access things they shouldn’t, for whatever policy reasons one might have.
 • It can listen to requests/responses and learn things, i.e. snoop on the traffic. Getting people to use your proxy though is a different challenge...
 o Andofcourseitcanlistentoandmodifyrequests/responses,forfunorprofit.
+
 For this assignment, you need to write a web proxy in C or Java, without the use of any external web/http-related libraries (html-parsing support is ok). ENGN students with limited C/Java backgrounds should talk with their tutors as we have other options there, though the requirements will be the same and more closely considered. As most networking server code is written in C, with other languages a distant second, it is worth learning it.
 Your code MUST open sockets in the standard socket() API way, as per the tutorial exercises. Your code MUST make appropriate and correctly-formed HTTP/1.0 (RFC1945) or HTTP/1.1 enhanced requests (to a web-server, as a client) and responses (to a web-browser, as a server) on its own, and capture/interpret the results on its own in both directions. You will be handcrafting HTTP packets, so you’ll need to understand the structures of requests/responses and HTTP headers.
 Wireshark will be helpful for debugging purposes, compare it to a direct web-browser transaction. The most common trap is not getting your line-ending ‘\n\n’ right on requests, and this is rather OS and language-specific. Remember to be conservative in what you send and reasonably liberal in what you accept.
