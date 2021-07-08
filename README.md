@@ -26,16 +26,4 @@ d. A count of the modifications made to the page by your proxy, counting text ch
 and link rewrites separately (i.e. return two labelled numbers)
 We will test this against the Bureau of Meteorology (BoM) website, by opening our web browser or telnet, making a top-level (‘/’) page request to your running proxy as if it were a server and we should get back the BoM homepage, modified suitably. Any (simple) links we click on that page should take us back to your proxy and again through to the BoM site for that next page, and so on. We’re not going to go too deep, there are some overly complex pages on the sites, but we will pick 5-10 pages. There will be only one client at a time running against your client.
 The reason for being flexible about the website to run against is that you can also daisy-chain proxies, i.e. to connect one proxies’ output to another’s input. This is one way of testing new protocol developments before they are accepted as IETF RFC’s, to see that everyone agrees with the protocol syntax. You can test this with classmates in tutorials or outside. It’s also used to federate a hierarchy of caches, so that the most popular content for a given network radius is more likely to be cached closer to the consumers, on potentially smaller caches.
-Submission and Assessment
-You need to submit your source code, and an executable (where appropriate). If it needs instructions to run, please provide those in a README file. Your submission must be a zip file, packaging everything as needed, and submitted through the appropriate link on wattle.
-There are many existing web-proxying tools and libraries out there, many of them with source. While perhaps educational for you, the assessors know they exist and they will be checking your code against them, and against other submissions from this class.
-Page 2 of 3
 
-Your code will be assessed on
-1. Output correctness (the http queries it sends, the modified BoM pages, the log of requests),
-2. Performance (a great proxy should be perfectly transparent, not causing any delays),
-3. Code correctness, clarity, and style, and
-4. Documentation (i.e. comments and any README - how easily can somebody new pick this
-up and modify it).
-Marks are allocated roughly 50% for 1-2 and 50% for 3-4.
-You should be able to test your code against any HTTP-based website you like, although a lot of sites use HTTPS now, or have complex html/js pages that can make parsing harder.
